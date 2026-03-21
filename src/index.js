@@ -175,6 +175,23 @@ function createServer() {
   return server;
 }
 
+// ── CORS (tarayıcıdan MCP Tester vb. için) ───────────────
+function applyCors(req, res) {
+  const origin = req.headers.origin;
+  if (origin) {
+    res.setHeader('Access-Control-Allow-Origin', origin);
+    res.setHeader('Vary', 'Origin');
+  } else {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+  }
+  res.setHeader(
+    'Access-Control-Allow-Headers',
+    'Content-Type, Accept, x-mcp-secret, mcp-session-id, mcp-protocol-version, Authorization'
+  );
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+  res.setHeader('Access-Control-Max-Age', '86400');
+}
+
 // ── HTTP SUNUCUSU ────────────────────────────────────────
 const PORT = process.env.PORT || 3001;
 
@@ -182,6 +199,7 @@ const httpServer = http.createServer(async (req, res) => {
 
   // Health check
   if (req.url === '/health' && req.method === 'GET') {
+    applyCors(req, res);
     res.writeHead(200, { 'Content-Type': 'application/json' });
     return res.end(JSON.stringify({ status: 'ok', service: 'base-mcp', version: '1.0.0' }));
   }
@@ -190,6 +208,14 @@ const httpServer = http.createServer(async (req, res) => {
   if (!req.url.startsWith('/mcp')) {
     res.writeHead(404);
     return res.end('Not found');
+  }
+
+  applyCors(req, res);
+
+  // CORS ön kontrolü — header gönderilmez; secret kontrolünden muaf
+  if (req.method === 'OPTIONS') {
+    res.writeHead(204);
+    return res.end();
   }
 
   // Opsiyonel: X-MCP-Secret header kontrolü
