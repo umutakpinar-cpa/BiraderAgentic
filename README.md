@@ -14,8 +14,8 @@ Vergi Merkezi BASE Ön Muhasebe portalı için Claude MCP (Model Context Protoco
 
 ### 1. Repoyu Klonla
 ```bash
-git clone https://github.com/vergimerkezi/base-mcp-server.git
-cd base-mcp-server
+git clone https://github.com/umutakpinar-cpa/agentic.git
+cd agentic
 npm install
 ```
 
