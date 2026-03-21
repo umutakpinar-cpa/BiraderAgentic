@@ -1,0 +1,19 @@
+{
+  "name": "base-mcp-server",
+  "version": "1.0.0",
+  "description": "Vergi Merkezi BASE Ön Muhasebe — MCP Server",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.10.0",
+    "axios": "^1.7.0",
+    "dotenv": "^16.4.0"
+  }
+}
