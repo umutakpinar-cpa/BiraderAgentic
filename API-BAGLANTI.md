@@ -1,5 +1,8 @@
 # API bağlantı bilgileri (referans)
 
+**Repo adı:** `umutakpinar-cpa/BiraderAgentic` (Worker: `biraderagentic`).  
+**`BASE_API_*` değişken adları:** Vergi Merkezi **BASE** ön muhasebe **portal API** bağlantısı içindir; repo / proje adı **BiraderAgentic**’tir — birbirinin yerine kullanılmaz.
+
 Bu dosya projede kullanılan **adresleri ve değişken adlarını** sabitler.  
 **Gizli anahtarları (token) buraya yazmayın** — `BASE_API_KEY`, `MCP_SECRET` yalnızca Cloudflare Secrets veya yerelde `.dev.vars` içinde tutulur (`.dev.vars` git’e eklenmez).
 

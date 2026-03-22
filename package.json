@@ -1,7 +1,7 @@
 {
-  "name": "base-mcp-server",
+  "name": "biraderagentic",
   "version": "1.0.0",
-  "description": "Vergi Merkezi BASE Ön Muhasebe — MCP Server (Cloudflare Workers)",
+  "description": "BiraderAgentic — Vergi Merkezi portal MCP Worker (Cloudflare)",
   "type": "module",
   "scripts": {
     "dev": "wrangler dev",

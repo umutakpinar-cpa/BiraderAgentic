@@ -1,7 +1,12 @@
-# BASE MCP Server
+# BiraderAgentic (MCP Worker)
 
-Vergi Merkezi BASE Ön Muhasebe portalı için MCP (Model Context Protocol) sunucusu.  
-**Cloudflare Workers** üzerinde çalışır — Node.js ya da sunucu gerektirmez.
+> **İsimlendirme**
+> - **GitHub / bu repo:** `umutakpinar-cpa/BiraderAgentic` — Worker adı: **`biraderagentic`**.
+> - **“BASE”:** Vergi Merkezi **ön muhasebe ürünü / portal** için kullanılan ticari ad. **Repo adı değildir.**
+> - Ortam değişkenleri **`BASE_API_URL`** / **`BASE_API_KEY`** portal API kökünü ve token’ı ifade eder (“BASE ürününe bağlan” anlamında); **BiraderAgentic repo adı ile karıştırılmaz.**
+
+Vergi Merkezi portal API’sine bağlanan **MCP (Model Context Protocol)** sunucusu.  
+**Cloudflare Workers** üzerinde çalışır — Node.js sunucu gerektirmez.
 
 ## Araçlar (13 Adet)
 
