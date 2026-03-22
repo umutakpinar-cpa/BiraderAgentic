@@ -1,0 +1,17 @@
+name = "biraderagentic"
+main = "src/index.js"
+compatibility_date = "2024-11-01"
+
+# Ortam değişkenlerini "wrangler secret put" komutuyla ya da
+# Cloudflare Dashboard → Workers → Settings → Variables bölümünden ekle:
+#
+#   wrangler secret put BASE_API_URL
+#   wrangler secret put BASE_API_KEY
+#   wrangler secret put MCP_SECRET
+#
+# İsteğe bağlı (Variables — düz metin):
+#   API_STYLE = agent | mcp
+#   API_LEGACY_PREFIX = /mcp
+
+[observability]
+enabled = true

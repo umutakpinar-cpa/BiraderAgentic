@@ -1,0 +1,21 @@
+# Local: cp .dev.vars.example .dev.vars
+
+# Portal kökü (sonunda / olmasın)
+BASE_API_URL=https://portal.vergimerkezi.com.tr/api/v1
+
+# Laravel Sanctum API token (portaldan)
+BASE_API_KEY=buraya_laravel_api_token
+
+# MCP endpoint şifresi (opsiyonel)
+MCP_SECRET=guclu_bir_sifre_belirle
+
+# --- API yönlendirme (yenileme) ---
+# agent = PROJE.md’deki /agent/... rotaları (varsayılan)
+# mcp   = eski /mcp/... Laravel MCP rotaları (tamamı /mcp altında)
+API_STYLE=agent
+
+# agent modunda takvim / beyanname / görev hâlâ /mcp/... altındaysa önek (varsayılan /mcp)
+# API_LEGACY_PREFIX=/mcp
+
+# İstek süresi (ms)
+# API_TIMEOUT_MS=25000
