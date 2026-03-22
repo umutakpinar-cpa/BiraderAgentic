@@ -23,13 +23,15 @@ Vergi Merkezi BASE Ön Muhasebe portalı için MCP (Model Context Protocol) sunu
 
 ## Kurulum
 
-### 1. Repoyu Klonla
+### 1. Repoyu al
 
 ```bash
-git clone https://github.com/umutakpinar-cpa/agentic.git
-cd agentic
+git clone https://github.com/umutakpinar-cpa/biraderagentic.git
+cd biraderagentic
 npm install
 ```
+
+Repo henüz yoksa GitHub’da oluştur; `git push` sorununda [GIT-REMOTE-KURULUM.md](./GIT-REMOTE-KURULUM.md) dosyasına bak.
 
 ### 2. Local Geliştirme
 

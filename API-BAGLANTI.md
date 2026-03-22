@@ -65,6 +65,10 @@ npm run dev
 
 Varsayılan Wrangler adresi: `http://localhost:8787`
 
+## Git
+
+Uzak repo adresi ve push için: [GIT-REMOTE-KURULUM.md](./GIT-REMOTE-KURULUM.md)
+
 ---
 
 *Son güncelleme: bu repodaki `src/index.js` ve `wrangler.toml` ile uyumludur.*
