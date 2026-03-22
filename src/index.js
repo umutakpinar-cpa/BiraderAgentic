@@ -549,6 +549,24 @@ export default {
       return new Response(null, { status: 204, headers: cors });
     }
 
+    // Kök URL — tarayıcıda "Not found" yerine yönlendirme bilgisi
+    if (url.pathname === '/' || url.pathname === '') {
+      const origin = url.origin;
+      return Response.json(
+        {
+          service: 'biraderagentic',
+          message:
+            'Bu bir API Worker’ıdır. Ana sayfa yok; /health ve POST /mcp kullanın.',
+          endpoints: {
+            GET_health: `${origin}/health`,
+            GET_health_probe: `${origin}/health?probe=1`,
+            POST_mcp: `${origin}/mcp`,
+          },
+        },
+        { headers: cors }
+      );
+    }
+
     if (url.pathname === '/health') {
       const baseUrl = normalizeBaseUrl(env.BASE_API_URL);
       const tokenOk = !!resolvePortalToken(env, request);
