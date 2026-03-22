@@ -27,7 +27,7 @@ git remote add origin git@github.com:KULLANICI_ADI/REPO_ADI.git
 Worker adı **biraderagentic** olduğu için repo adı olarak da **`biraderagentic`** kullanılabilir:
 
 ```bash
-git remote add origin https://github.com/umutakpinar-cpa/biraderagentic.git
+git remote add origin https://github.com/umutakpinar-cpa/BiraderAgentic.git
 ```
 
 Repo henüz yoksa önce GitHub’da oluştur, sonra push et.
