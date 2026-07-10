@@ -1,0 +1,43 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum MessageType {
+  INCOMING
+  OUTGOING
+}
+
+model User {
+  id          String    @id @default(uuid())
+  instagramId String    @unique
+  name        String?
+  username    String?
+  createdAt   DateTime  @default(now())
+  messages    Message[]
+}
+
+model Message {
+  id            String        @id @default(uuid())
+  messageId     String        @unique
+  userId        String
+  user          User          @relation(fields: [userId], references: [id])
+  text          String?
+  localImageUrl String?
+  type          MessageType
+  createdAt     DateTime      @default(now())
+  searchResult  SearchResult?
+}
+
+model SearchResult {
+  id            String   @id @default(uuid())
+  messageId     String   @unique
+  message       Message  @relation(fields: [messageId], references: [messageId])
+  queryUrl      String
+  foundProducts Json
+  createdAt     DateTime @default(now())
+}
